@@ -1,21 +1,16 @@
 package me.thomas.restlet.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by thomas on 2014/12/26.
  */
 public class UploadFile {
 
-    private String fileName;
+    private List<String> fileNames = new ArrayList<String>();
 
-    public UploadFile(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public List<String> getFileNames() {
+        return fileNames;
     }
 }

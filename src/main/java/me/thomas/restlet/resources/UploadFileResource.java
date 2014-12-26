@@ -19,18 +19,14 @@ import java.util.List;
 public class UploadFileResource extends ServerResource {
 
     @Post
-    public UploadFile uploadFile(Representation entity) {
+    public UploadFile uploadFile(Representation entity) throws Exception {
         if(entity == null || entity.getMediaType() == null || !MediaType.MULTIPART_FORM_DATA.isCompatible(entity.getMediaType())) {
-            throw new IllegalArgumentException("The request should be of type" + MediaType.MULTIPART_FORM_DATA  +".");
+            throw new IllegalArgumentException("The request should be of type " + MediaType.MULTIPART_FORM_DATA  + ".");
         }
 
-        List<FileItem> items = null;
+        UploadFile uploadFile = new UploadFile();
         RestletFileUpload upload = new RestletFileUpload(new DiskFileItemFactory());
-        try {
-            items = upload.parseRepresentation(entity);
-        } catch (FileUploadException e) {
-            e.printStackTrace();
-        }
+        List<FileItem> items = upload.parseRepresentation(entity);
 
         for (FileItem fileItem : items) {
             if (!fileItem.isFormField()) {
@@ -40,9 +36,12 @@ public class UploadFileResource extends ServerResource {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                uploadFile.getFileNames().add(fileName);
+            } else {
+                System.out.println(fileItem.getFieldName() + " -> " + fileItem.getString());
             }
         }
 
-        return new UploadFile("");
+        return uploadFile;
     }
 }

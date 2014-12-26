@@ -18,8 +18,14 @@
     </div>
 
     <div role="main" class="ui-content">
-        <form>
-            <input type="file" accept="image/*">
+        <form action="<%= request.getContextPath()%>/rest/upload" enctype="multipart/form-data" method="post" data-ajax="false">
+            <div data-role="fieldcontain">
+                <label for="name">姓名:</label>
+                <input id="name" type="text" name="name">
+                <label for="photo">照片:</label>
+                <input id="photo" type="file" name="photo" accept="image/*" capture="camera">
+            </div>
+            <input type="submit" data-inline="true" value="提交">
         </form>
     </div>
 
