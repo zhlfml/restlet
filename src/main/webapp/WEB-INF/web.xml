@@ -11,7 +11,7 @@
         <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
         <init-param>
             <param-name>org.restlet.application</param-name>
-            <param-value>me.thomas.restlet.StudentApplication</param-value>
+            <param-value>me.thomas.restlet.MyApplication</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

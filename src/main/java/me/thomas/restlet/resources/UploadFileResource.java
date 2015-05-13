@@ -4,9 +4,12 @@ import me.thomas.restlet.entity.UploadFile;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.restlet.data.Disposition;
 import org.restlet.data.MediaType;
 import org.restlet.ext.fileupload.RestletFileUpload;
+import org.restlet.representation.FileRepresentation;
 import org.restlet.representation.Representation;
+import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 
@@ -44,4 +47,5 @@ public class UploadFileResource extends ServerResource {
 
         return uploadFile;
     }
+
 }

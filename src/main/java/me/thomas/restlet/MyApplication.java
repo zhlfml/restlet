@@ -1,5 +1,6 @@
 package me.thomas.restlet;
 
+import me.thomas.restlet.resources.DownloadFileResource;
 import me.thomas.restlet.resources.StudentResource;
 import me.thomas.restlet.resources.StudentsResource;
 import me.thomas.restlet.resources.UploadFileResource;
@@ -10,7 +11,7 @@ import org.restlet.routing.Router;
 /**
  * Created by thomas on 12/24/14.
  */
-public class StudentApplication extends Application {
+public class MyApplication extends Application {
 
     @Override
     public Restlet createInboundRoot() {
@@ -18,6 +19,7 @@ public class StudentApplication extends Application {
         router.attach("/student/{id}", StudentResource.class);
         router.attach("/students", StudentsResource.class);
         router.attach("/upload", UploadFileResource.class);
+        router.attach("/download", DownloadFileResource.class);
 
         return router;
     }
