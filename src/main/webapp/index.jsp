@@ -26,11 +26,16 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-2">
-            <a class="btn" href="<%= request.getContextPath()%>/rest/download?jpg">Download JPG</a>
-            <a class="btn" href="<%= request.getContextPath()%>/rest/download?pdf">Download PDF</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
 </form>
+<div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+        <a class="btn" href="<%= request.getContextPath()%>/rest/download?jpg">Download JPG</a>
+        <a class="btn" href="<%= request.getContextPath()%>/rest/download?pdf">Download PDF</a>
+    </div>
+</div>
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
