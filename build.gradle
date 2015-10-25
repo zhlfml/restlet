@@ -16,12 +16,13 @@ repositories {
 dependencies {
     providedCompile 'javax.servlet:servlet-api:2.5'
     runtime 'javax.servlet:jstl:1.1.2'
-    compile 'org.restlet.jee:org.restlet:2.0.15'
-    compile 'org.restlet.jee:org.restlet.ext.servlet:2.0.15'
-    compile ('org.restlet.jee:org.restlet.ext.jackson:2.0.15') {
+    compile 'org.restlet.jee:org.restlet:2.3.5'
+    compile 'org.restlet.jee:org.restlet.ext.html:2.3.5'
+    compile 'org.restlet.jee:org.restlet.ext.servlet:2.3.5'
+    compile ('org.restlet.jee:org.restlet.ext.jackson:2.3.5') {
         exclude group: 'org.codehaus.jackson'
     }
-    compile 'org.restlet.jee:org.restlet.ext.fileupload:2.0.15'
+    compile 'org.restlet.jee:org.restlet.ext.fileupload:2.3.5'
     compile 'org.codehaus.jackson:jackson-core-asl:1.9.9'
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.9'
     compile 'commons-io:commons-io:2.4'
